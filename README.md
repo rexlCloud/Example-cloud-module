@@ -50,7 +50,7 @@ Copy `build/libs/Example-cloud-module-1.0.0.jar` into the master's `modules/` fo
 
 ## Good to know
 
-- `module-api` and Gson are `compileOnly`: the master contains both.
+- `module-api` is `compileOnly` (Maven: `provided`): the master contains it. It brings Gson and Adventure along.
 - `rexlCloudVersion` in `build.gradle` should match your cloud's version.
 - Event and question callbacks run on cloud threads; start a thread for slow work (`GroupWizard` does).
 
