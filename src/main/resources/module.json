@@ -1,0 +1,6 @@
+{
+  "name": "ExampleModule",
+  "main": "de.rexlcloud.example.module.ExampleModule",
+  "author": "rexlCloud",
+  "version": "${version}"
+}

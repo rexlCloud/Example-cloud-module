@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group = 'de.rexlcloud.example'
+version = '1.0.0'
+
+// The rexlCloud version this example is built against; use the version of your cloud
+def rexlCloudVersion = '2.0.24'
+
+repositories {
+    mavenCentral()
+    // The rexlCloud APIs
+    maven { url = 'https://repo.rexlcloud.de/snapshots' }
+}
+
+dependencies {
+    // compileOnly: the master already contains the API and loads the module into it
+    compileOnly "de.rexlcloud:module-api:$rexlCloudVersion"
+    // The ModuleApi answers with Gson's JSON types; the master brings Gson along
+    compileOnly 'com.google.code.gson:gson:2.14.0'
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(25)
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+processResources {
+    filesMatching('module.json') {
+        expand(version: project.version)
+    }
+}
