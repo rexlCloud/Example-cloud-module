@@ -6,12 +6,12 @@ group = 'de.rexlcloud.example'
 version = '1.0.0'
 
 // The rexlCloud version this example is built against; use the version of your cloud
-def rexlCloudVersion = '2.0.25'
+def rexlCloudVersion = '1.0.0'
 
 repositories {
     mavenCentral()
     // The rexlCloud APIs
-    maven { url = 'https://repo.rexlcloud.de/snapshots' }
+    maven { url = 'https://repo.rexlcloud.de/releases' }
 }
 
 dependencies {
